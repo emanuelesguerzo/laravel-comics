@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('titolo-pagina')
-    Home
+    Home | DC Comics
 @endsection
 
 @section('contenuto')
@@ -27,31 +27,33 @@
             <button class="more-btn">Load More</button>
         </div>
     </div>
-     
+
     <div class="banner py-5">
         <div class="container">
-            <div class="row text-white gy-4">
-                <div class="col-6 col-md-4 col-lg-2 offset-lg-1 d-flex align-items-center justify-content-center gap-2">
+            <div class="row row-gap-4 justify-content-between">
+                <div class="col-12 col-md-4 col-lg-2 d-flex align-items-center justify-content-center">
                     <img src="{{ Vite::asset('resources/img/buy-comics-digital-comics.png') }}" alt="">
                     <span>Digital Comics</span>
                 </div>
-                <div class="col-6 col-md-4 col-lg-2 d-flex align-items-center justify-content-center gap-2">
+                <div class="col-12 col-md-4 col-lg-3 d-flex align-items-center justify-content-center">
                     <img src="{{ Vite::asset('resources/img/buy-comics-merchandise.png') }}" alt="">
                     <span>DC Merchandise</span>
                 </div>
-                <div class="col-6 col-md-4 col-lg-2 d-flex align-items-center justify-content-center gap-2">
+                <div class="col-12 col-md-4 col-lg-2 d-flex align-items-center justify-content-center gap-2">
                     <img src="{{ Vite::asset('resources/img/buy-comics-subscriptions.png') }}" alt="">
                     <span>Subscription</span>
                 </div>
-                <div class="col-6 col-md-6 col-lg-2 d-flex align-items-center justify-content-center gap-2">
+                <div class="col-12 col-md-6 col-lg-3 d-flex align-items-center justify-content-center">
                     <img src="{{ Vite::asset('resources/img/buy-comics-shop-locator.png') }}" alt="">
                     <span>Comic Shop Locator</span>
                 </div>
-                <div class="col-6 col-md-6 col-lg-2 d-flex align-items-center justify-content-center gap-2">
+                <div class="col-12 col-md-6 col-lg-2 d-flex align-items-center justify-content-center gap-2">
                     <img src="{{ Vite::asset('resources/img/buy-dc-power-visa.svg') }}" alt="">
                     <span>DC Power Visa</span>
                 </div>
+
             </div>
         </div>
+
     </div>
 @endsection

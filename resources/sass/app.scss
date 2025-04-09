@@ -121,11 +121,13 @@ body {
     font-weight: 900;
     letter-spacing: 1px;
     margin: 40px auto;
+    border: none;
 }
 
 // Banner
 .banner {
     background-color: #0282f9;
+    
 }
 
 .banner img {
@@ -135,9 +137,22 @@ body {
 }
 
 .banner span {
-    font-size: 0.85rem;
+    font-size: 1rem;
+    width: fit-content;
     font-weight: 900;
     text-transform: uppercase;
+}
+
+// Footer
+.footer {
+    background: url('../img/footer-bg.jpg');
+    background-size: cover;
+}
+
+.footer-left,
+.footer-right {
+    width: 50%;
+    border: 1px solid white;
 }
 
 

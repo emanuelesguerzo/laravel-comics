@@ -8,6 +8,8 @@
 
     {{-- SASS --}}
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    
+    <link rel="icon" type="image/x-icon" href="{{ Vite::asset('resources/img/favicon.ico') }}">
 
     <title>@yield('titolo-pagina')</title>
 </head>
