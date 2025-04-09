@@ -8,6 +8,10 @@
 @import 'bootstrap/scss/bootstrap';
 
 // Custom Styles
+body {
+    color: #ffffff;
+}
+
 // HEADER
 .header {
     border: 1px solid black;
@@ -19,21 +23,25 @@
 }
 
 .navbar {
-    position: relative; // punto di riferimento per ::after
-    background-color: #f8f9fa; // colore chiaro di sfondo
+    position: relative; 
+    background-color: #f8f9fa; 
     padding: 0;
+}
+
+.navbar-toggler {
+    margin: 0;
 }
 
 .navbar-nav .nav-link {
     position: relative;
     color: black;
-    padding: 1.5rem 1rem; // aumenta padding se serve
+    padding: 1.5rem 1rem;
     text-transform: uppercase;
 
     &::after {
         content: '';
         position: absolute;
-        bottom: -20px; // spingilo fino al fondo della navbar
+        bottom: -20px; 
         left: 0;
         width: 100%;
         height: 6px;
@@ -50,31 +58,90 @@
 }
 
 .jumbotron {
-    background-image: url('../img/jumbotron.jpg'); // percorso relativo corretto
+    background-image: url('../img/jumbotron.jpg');
     background-size: cover;
-    height: 400px; // puoi regolarla come vuoi
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 40vh;
+}
+
+.main-content {
     position: relative;
+    padding-top: 40px;
 }
 
 .series-badge {
     display: inline-block;
+    width: fit-content;
     background-color: #0282f9;
     color: white;
+    padding: 12px 24px;
     text-transform: uppercase;
-    font-weight: bold;
-    padding: 0.5rem 2rem;
-    font-size: 1.25rem;
-    position: relative;
-    top: -40px; // fa salire la badge sopra la sezione successiva
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 4px;
+    position: absolute;
+    top: -30px;
+    left: 0;
     z-index: 10;
-  }
+}
 
+.card {
+    border: none;
+}
+
+.card-body {
+    padding: 0
+
+}
+
+.text-white {
+    margin-bottom: 0;
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.6rem;
+}
+
+.comic-thumb {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.more-btn {
+    background-color: #0282f9;
+    color: white;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 40px auto;
+}
+
+// Banner
+.banner {
+    background-color: #0282f9;
+}
+
+.banner img {
+    width: 60px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.banner span {
+    font-size: 0.85rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+
+// Media Queries
 @media screen and (max-width: 990px) {
     .navbar-nav .nav-link {
         text-align: center;
@@ -83,6 +150,6 @@
             bottom: 0;
             transform-origin: left;
         }
-        
+
     }
 }

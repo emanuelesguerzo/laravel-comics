@@ -13,7 +13,7 @@
         {{-- NAVBAR LINKS --}}
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="{{ route("home") }}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Characters</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Comics</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
