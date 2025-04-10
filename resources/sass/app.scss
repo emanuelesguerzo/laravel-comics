@@ -12,6 +12,11 @@ body {
     color: #ffffff;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
 // HEADER
 .header {
     border: 1px solid black;
@@ -127,13 +132,14 @@ body {
 // Banner
 .banner {
     background-color: #0282f9;
-    
+    z-index: 10;
 }
 
 .banner img {
     width: 60px;
     aspect-ratio: 1 / 1;
     object-fit: contain;
+    z-index: 10;
 }
 
 .banner span {
@@ -141,6 +147,7 @@ body {
     width: fit-content;
     font-weight: 900;
     text-transform: uppercase;
+    z-index: 10;
 }
 
 // Footer
@@ -149,11 +156,51 @@ body {
     background-size: cover;
 }
 
+.footer a {
+    color: #a4a6a2;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    
+}
+
 .footer-left,
 .footer-right {
     width: 50%;
-    border: 1px solid white;
 }
+
+.column {
+    z-index: 10;
+}
+
+.footer-top {
+    position: relative;
+}
+
+.dc-logo {
+    position: absolute;
+    right: 0;
+    top: -100px;
+    overflow: hidden;
+}
+
+.footer-bottom {
+    background-color: #303030;
+    position: relative; 
+    z-index: 1; 
+    margin-top: auto;
+}
+
+.follow {
+    text-transform: uppercase;
+    color: #0282f9 !important;
+    font-weight: 900;
+}
+
 
 
 // Media Queries
