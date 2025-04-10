@@ -8,8 +8,24 @@
 @import 'bootstrap/scss/bootstrap';
 
 // Custom Styles
+// Custom Properties
+:root {
+    --primary-font-color: #ffffff;
+    --header-bg-color: #f8f9fa;
+    --primary-color: #0282f9;
+    --footer-links: #a4a6a2;
+    --btn-hover: #0271e0;
+    --footer-bottom-bg: #303030;
+    --social-links-bg-hover: #0282f9a3;
+    --social-links-shadow-hover: #ffffff80;
+    --sign-up-btn-bg-hover: #0282f96f;
+    --sign-up-btn-shadow-hover: #ffffff80;
+    --navbar-text-color: #000000;
+}
+
+// Global Styles
 body {
-    color: #ffffff;
+    color: var(--primary-font-color);
 }
 
 ul {
@@ -17,19 +33,16 @@ ul {
     padding: 0;
 }
 
-// HEADER
-.header {
-    border: 1px solid black;
-}
-
+// Header
 .logo {
     width: 100px;
     height: auto;
+    padding: 10px;
 }
 
 .navbar {
     position: relative; 
-    background-color: #f8f9fa; 
+    background-color: var(--header-bg-color); 
     padding: 0;
 }
 
@@ -39,9 +52,10 @@ ul {
 
 .navbar-nav .nav-link {
     position: relative;
-    color: black;
+    color: var(--navbar-text-color);
     padding: 1.5rem 1rem;
     text-transform: uppercase;
+    font-weight: 900;
 
     &::after {
         content: '';
@@ -50,10 +64,10 @@ ul {
         left: 0;
         width: 100%;
         height: 6px;
-        background-color: #0282f9;
+        background-color: var(--primary-color);
         transform: scaleX(0);
         transform-origin: center;
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.5s ease-in-out;
     }
 
     &:hover::after,
@@ -62,84 +76,77 @@ ul {
     }
 }
 
+// Jumbotron
 .jumbotron {
     background-image: url('../img/jumbotron.jpg');
     background-size: cover;
     height: 40vh;
-}
-
-.main-content {
     position: relative;
-    padding-top: 40px;
 }
 
+// Section Title
 .series-badge {
-    display: inline-block;
+    position: relative;
     width: fit-content;
-    background-color: #0282f9;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
     padding: 12px 24px;
     text-transform: uppercase;
-    position: absolute;
-    top: -30px;
-    left: 0;
-    z-index: 10;
+    margin-top: -30px;
 }
 
-.card {
-    border: none;
-}
-
-.card-body {
-    padding: 0
-
-}
-
-.text-white {
+.section-title {
     margin-bottom: 0;
     font-weight: 900;
     font-size: 1.4rem;
     letter-spacing: 1px;
 }
 
-.card-title {
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.6rem;
-}
-
-.comic-thumb {
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-    margin-bottom: 15px;
-}
-
+// Load More Button
 .more-btn {
-    background-color: #0282f9;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
     padding: 8px 16px;
     text-transform: uppercase;
-    font-size: 1rem;
+    text-decoration: none;
+    font-size: 1.5rem;
     font-weight: 900;
     letter-spacing: 1px;
-    margin: 40px auto;
     border: none;
+    display: block;
+    width: fit-content;
+    margin: 40px auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+// Load More Button Hover Effect
+.more-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+// /////////////
+// Footer
+.footer {
+    background: url('../img/footer-bg.jpg');
+    background-size: cover;
 }
 
 // Banner
-.banner {
-    background-color: #0282f9;
+.banner,
+.banner img,
+.banner span {
     z-index: 10;
+}
+
+.banner {
+    background-color: var(--primary-color);
 }
 
 .banner img {
     width: 60px;
     aspect-ratio: 1 / 1;
     object-fit: contain;
-    z-index: 10;
 }
 
 .banner span {
@@ -147,25 +154,11 @@ ul {
     width: fit-content;
     font-weight: 900;
     text-transform: uppercase;
-    z-index: 10;
 }
 
-// Footer
-.footer {
-    background: url('../img/footer-bg.jpg');
-    background-size: cover;
-}
-
-.footer a {
-    color: #a4a6a2;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.footer a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-    
+// Footer Top
+.footer-top {
+    position: relative;
 }
 
 .footer-left,
@@ -173,14 +166,33 @@ ul {
     width: 50%;
 }
 
+// Footer Left
 .column {
     z-index: 10;
 }
 
-.footer-top {
-    position: relative;
+// List Titles
+.column h4 {
+    text-transform: uppercase;
+    font-weight: 900;
+    user-select: none;
+    letter-spacing: 1px;
 }
 
+// Footer Links
+.footer a {
+    color: var(--footer-links);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+// Footer Links Hover
+.footer a:hover {
+    color: var(--primary-font-color);
+    text-decoration: underline;
+}
+
+// Footer Left
 .dc-logo {
     position: absolute;
     right: 0;
@@ -188,23 +200,153 @@ ul {
     overflow: hidden;
 }
 
+// Footer Bottom
 .footer-bottom {
-    background-color: #303030;
+    background-color: var(--footer-bottom-bg);
     position: relative; 
-    z-index: 1; 
     margin-top: auto;
 }
 
-.follow {
+// Sign Up Button
+.sign-up-btn {
+    background-color: transparent;
+    color: var(--primary-font-color);
+    padding: 8px 16px;
     text-transform: uppercase;
-    color: #0282f9 !important;
+    font-size: 1.3rem;
     font-weight: 900;
+    border: 2px solid var(--primary-color);
+    transition: background-color 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
 }
 
+// Sign Up Button Hover
+.sign-up-btn:hover {
+    background-color: var(--sign-up-btn-bg-hover); 
+    box-shadow: 0 0 10px 5px var(--sign-up-btn-shadow-hover);
+}
 
+// Follow Us
+.follow {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: 900;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
 
+// Social Links
+.social-bottom a img {
+    border-radius: 50%;
+    transition: box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+// Social Links Hover
+.social-bottom a img:hover {
+    background-color: var(--social-links-bg-hover);
+    box-shadow: 0 0 10px 5px var(--social-links-shadow-hover);
+    border-radius: 50%;
+
+}
+
+// //////////////////////////
+// Home Page - home.blade.php
+// Main Content
+.main-content {
+    padding-top: 20px;
+}
+
+// Comic Cards
+.card {
+    border: none;
+}
+
+// Card Body
+.card-body {
+    padding: 0;
+}
+
+.comic-title,
+.comic-thumb {
+    cursor: pointer;
+}
+
+// Comic Image
+.comic-thumb {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    margin-bottom: 12px;
+}
+
+// Comic Title
+.card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.6rem;
+}
+
+// //////////////////////////////////////
+// Characters Page - characters.blade.php
+// Character Card
+.character-card {
+    border: 1px solid var(--primary-color);
+    padding: 30px 15px;
+    margin: 0;
+}
+
+// Character Image
+.character-img {
+    width: 11rem;
+    height: 11rem;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    background-color: #000000;
+}
+
+// Character Description
+.character-description {
+    font-size: 1rem;
+}
+
+// Character Card Title
+.character-name {
+    color: var(--primary-color);
+}
+
+// Learn More Button
+.learn-more-btn {
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+    padding: 8px 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    border: none;
+    display: block;
+    width: fit-content;
+    cursor: pointer;
+    margin: auto auto 0 auto;
+    transition: background-color 0.3s ease-in-out;
+}
+
+// Learn More Button Hover Effect
+.learn-more-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+// //////////////
 // Media Queries
+// /////////////
 @media screen and (max-width: 990px) {
+
+    // Header
     .navbar-nav .nav-link {
         text-align: center;
 
@@ -214,4 +356,30 @@ ul {
         }
 
     }
+
+    // Footer
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sign-up-btn {
+        margin-bottom: 40px;
+    }
+
+    .socials {
+        flex-direction: column;
+    }
+
+    .social-top {
+        text-align: center;
+    }
+
 }
