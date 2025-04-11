@@ -2,14 +2,10 @@
 @extends('layouts.master')
 
 {{-- Titolo Tab Pagina --}}
-@section('titolo-pagina')
-    Home | DC Comics
-@endsection
+@section('titolo-pagina', "Home | DC Comics")
 
 {{-- Titolo Sezione Main --}}
-@section('titolo-sezione')
-    Current Series
-@endsection
+@section('titolo-sezione', "Current Series")
 
 {{-- Contenuto Pagina Home --}}
 @section('contenuto')
